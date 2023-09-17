@@ -1,0 +1,184 @@
+body {
+  background-color: #f3f4f6;
+  color: rgb(92, 74, 74);
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.resume-builder {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.edit-form-container {
+  width: 500px;
+  background-color: rgb(255, 255, 255);
+  margin-right: 50px;
+}
+
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type="email"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: none;
+}
+
+.personal-form {
+  border-radius: 15px;
+  padding: 20px;
+}
+
+.personal-details-title {
+  font-size: 30px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.resume-container {
+  display: flex;
+  flex-direction: column;
+  width: 21cm;
+  height: 29.7 cm;
+  background-color: rgb(255, 255, 255);
+  padding-bottom: 50px;
+}
+
+.header {
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.info-fullname {
+  font-size: 60px;
+  height: 140px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.info-current-role {
+  font-size: 30px;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  width: 700px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+}
+
+.info-container {
+  display: flex;
+  flex: 1;
+}
+.main-left {
+  width: 350px;
+  /* background-color: bisque; */
+}
+
+.info-summary,
+.info-education {
+  padding-left: 50px;
+  padding-top: 40px;
+  padding-right: 30px;
+}
+
+.info-work,
+.info-skills {
+  padding-left: 30px;
+  padding-top: 40px;
+  padding-right: 50px;
+}
+
+.summary-title,
+.edu-title,
+.work-title,
+.skills-title {
+  font-size: 26px;
+  margin-bottom: 25px;
+}
+
+.info {
+  padding-left: 50px;
+  padding-top: 50px;
+  padding-right: 30px;
+  font-weight: bold;
+}
+
+.info div {
+  margin-bottom: 10px;
+}
+
+.info-line {
+  border-top: 2px solid black;
+  margin-top: 40px;
+  margin-left: 50px;
+  width: 250px;
+}
+
+.info-line2 {
+  border-top: 2px solid black;
+  margin-top: 40px;
+  margin-left: 30px;
+  width: 350px;
+}
+
+.main-right {
+  width: 450px;
+  /* background-color: brown; */
+}
+
+.job-details,
+.edu-details {
+  margin-bottom: 25px;
+}
+
+.job-row1,
+.edu-row1 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.job-role,
+.job-duration,
+.edu-name,
+.edu-duration {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.job-place,
+.edu-place {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
