@@ -24,6 +24,8 @@ body {
   width: 500px;
   background-color: rgb(255, 255, 255);
   margin-right: 50px;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
 input[type="text"],
@@ -51,12 +53,17 @@ textarea {
   resize: none;
 }
 
-.personal-form {
-  border-radius: 15px;
+.personal-form,
+.skills-form,
+.work-form,
+.edu-form {
   padding: 20px;
 }
 
-.personal-details-title {
+.personal-details-title,
+.skills-details-title,
+.work-details-title,
+.edu-details-title {
   font-size: 30px;
   margin-bottom: 10px;
   font-weight: bold;
@@ -69,6 +76,7 @@ textarea {
   height: 29.7 cm;
   background-color: rgb(255, 255, 255);
   padding-bottom: 50px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
 .header {
@@ -99,7 +107,7 @@ textarea {
 
 .info-container {
   display: flex;
-  flex: 1;
+  /* flex: 1; */
 }
 .main-left {
   width: 350px;
@@ -107,14 +115,14 @@ textarea {
 }
 
 .info-summary,
-.info-education {
+.info-skills {
   padding-left: 50px;
   padding-top: 40px;
   padding-right: 30px;
 }
 
 .info-work,
-.info-skills {
+.info-education {
   padding-left: 30px;
   padding-top: 40px;
   padding-right: 50px;
@@ -137,6 +145,13 @@ textarea {
 
 .info div {
   margin-bottom: 10px;
+  display: flex;
+}
+
+.logo-img {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
 }
 
 .info-line {
@@ -163,22 +178,72 @@ textarea {
   margin-bottom: 25px;
 }
 
-.job-row1,
-.edu-row1 {
+/* .job-row1 {
   display: flex;
   justify-content: space-between;
-}
+} */
 
 .job-role,
-.job-duration,
-.edu-name,
-.edu-duration {
+.edu-name {
   font-weight: bold;
   font-size: 20px;
+}
+
+.job-role {
+  margin-right: 10px;
 }
 
 .job-place,
 .edu-place {
   margin-top: 10px;
   margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.job-tasks ul li {
+  margin-bottom: 5px;
+}
+
+.del-skill-btn,
+.del-task-btn {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  position: relative;
+  top: 35px;
+}
+
+.add-skill-btn,
+.add-task-btn {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.skill-label,
+.jobtask-label {
+  display: flex;
+  justify-content: space-between;
+}
+
+.submit-work-btn,
+.submit-edu-btn {
+  background-color: rgb(255, 255, 255);
+  border: 2px solid rgb(92, 74, 74);
+  color: rgb(92, 74, 74);
+  padding: 10px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 10px;
+  justify-self: center;
+}
+
+.work-details-form,
+.edu-details-form {
+  display: flex;
+  flex-direction: column;
 }
