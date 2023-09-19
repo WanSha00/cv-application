@@ -247,3 +247,19 @@ textarea {
   display: flex;
   flex-direction: column;
 }
+
+.hide {
+  display: none;
+}
+
+.formTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form-title-menu {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}

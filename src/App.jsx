@@ -6,79 +6,118 @@ import logoWeb from "./assets/web.svg";
 import logoPhone from "./assets/phone-outline.svg";
 import deleteItem from "./assets/delete.svg";
 import addItem from "./assets/plus.svg";
+import openMenu from "./assets/menu-down.svg";
 
 function App() {
+  const [hidePersonal, setHidePersonal] = useState(false);
+  const [hideSkills, setHideSkills] = useState(false);
+  const [hideWork, setHideWork] = useState(false);
+  const [hideEdu, setHideEdu] = useState(false);
+
   return (
     <>
       <div className="resume-builder">
         <div className="edit-form-container">
           <div className="personal-form">
             <form className="personal-details-form">
-              <div className="personal-details-title">Personal Details</div>
-              <div>
-                <label htmlFor="fullname">Full Name</label>
-                <input type="text" id="fullname"></input>
+              <div className="formTitle">
+                <div className="personal-details-title">Personal Details</div>
+                <img
+                  className="form-title-menu"
+                  src={openMenu}
+                  alt="personal menu"
+                  onClick={() => setHidePersonal(!hidePersonal)}
+                ></img>
               </div>
-              <div>
-                <label htmlFor="currentTitle">Current Title</label>
-                <input type="text" id="currentTitle"></input>
-              </div>
-              <div>
-                <label htmlFor="summary">Profile Summary</label>
-                <textarea id="summary" rows={4} cols={50}></textarea>
-              </div>
-              <div>
-                <label htmlFor="address">Address</label>
-                <input type="text" id="address"></input>
-              </div>
-              <div>
-                <label htmlFor="email">Email</label>
-                <input type="email" id="email"></input>
-              </div>
-              <div>
-                <label htmlFor="website">Website</label>
-                <input type="text" id="website"></input>
-              </div>
-              <div>
-                <label htmlFor="phone">Phone Number</label>
-                <input type="text" id="phone"></input>
+
+              <div className={hidePersonal ? "hide" : ""}>
+                <div>
+                  <label htmlFor="fullname">Full Name</label>
+                  <input type="text" id="fullname"></input>
+                </div>
+                <div>
+                  <label htmlFor="currentTitle">Current Title</label>
+                  <input type="text" id="currentTitle"></input>
+                </div>
+                <div>
+                  <label htmlFor="summary">Profile Summary</label>
+                  <textarea id="summary" rows={4} cols={50}></textarea>
+                </div>
+                <div>
+                  <label htmlFor="address">Address</label>
+                  <input type="text" id="address"></input>
+                </div>
+                <div>
+                  <label htmlFor="email">Email</label>
+                  <input type="email" id="email"></input>
+                </div>
+                <div>
+                  <label htmlFor="website">Website</label>
+                  <input type="text" id="website"></input>
+                </div>
+                <div>
+                  <label htmlFor="phone">Phone Number</label>
+                  <input type="text" id="phone"></input>
+                </div>
               </div>
             </form>
           </div>
 
           <div className="skills-form">
             <form className="skills-details-form">
-              <div className="skills-details-title">Skills</div>
-              <div className="skill-label">
-                <div>
-                  <label htmlFor="skill">Skill</label>
-                  <input type="text" id="skill"></input>
-                </div>
+              <div className="formTitle">
+                <div className="skills-details-title">Skills</div>
                 <img
-                  className="del-skill-btn"
-                  src={deleteItem}
-                  alt="delete skill"
+                  className="form-title-menu"
+                  src={openMenu}
+                  alt="skills menu"
+                  onClick={() => setHideSkills(!hideSkills)}
                 ></img>
               </div>
-              <div className="skill-label">
-                <div>
-                  <label htmlFor="skill">Skill</label>
-                  <input type="text" id="skill"></input>
+              <div className={hideSkills ? "hide" : ""}>
+                <div className="skill-label">
+                  <div>
+                    <label htmlFor="skill">Skill</label>
+                    <input type="text" id="skill"></input>
+                  </div>
+                  <img
+                    className="del-skill-btn"
+                    src={deleteItem}
+                    alt="delete skill"
+                  ></img>
+                </div>
+                <div className="skill-label">
+                  <div>
+                    <label htmlFor="skill">Skill</label>
+                    <input type="text" id="skill"></input>
+                  </div>
+                  <img
+                    className="del-skill-btn"
+                    src={deleteItem}
+                    alt="delete skill"
+                  ></img>
                 </div>
                 <img
-                  className="del-skill-btn"
-                  src={deleteItem}
-                  alt="delete skill"
+                  className="add-skill-btn"
+                  src={addItem}
+                  alt="add skill"
                 ></img>
               </div>
             </form>
-            <img className="add-skill-btn" src={addItem} alt="add skill"></img>
           </div>
 
           <div className="work-form">
             <form className="work-details-form">
-              <div>
+              <div className="formTitle">
                 <div className="work-details-title">Work Experience</div>
+                <img
+                  className="form-title-menu"
+                  src={openMenu}
+                  alt="work menu"
+                  onClick={() => setHideWork(!hideWork)}
+                ></img>
+              </div>
+              <div className={hideWork ? "hide" : ""}>
                 <div>
                   <label htmlFor="jobRole">Role</label>
                   <input type="text" id="jobRole"></input>
@@ -120,14 +159,29 @@ function App() {
                 ></img>
               </div>
 
-              <button className="submit-work-btn">Submit</button>
+              <button
+                className={
+                  hideWork ? "submit-work-btn hide" : "submit-work-btn"
+                }
+              >
+                Submit
+              </button>
             </form>
           </div>
 
           <div className="edu-form">
             <form className="edu-details-form">
-              <div>
+              <div className="formTitle">
                 <div className="edu-details-title">Education</div>
+                <img
+                  className="form-title-menu"
+                  src={openMenu}
+                  alt="edu menu"
+                  onClick={() => setHideEdu(!hideEdu)}
+                ></img>
+              </div>
+
+              <div className={hideEdu ? "hide" : ""}>
                 <div>
                   <label htmlFor="eduLevel">Education Level</label>
                   <input type="text" id="eduLevel"></input>
@@ -141,8 +195,11 @@ function App() {
                   <input type="text" id="eduLoc"></input>
                 </div>
               </div>
-
-              <button className="submit-edu-btn">Submit</button>
+              <button
+                className={hideEdu ? "submit-edu-btn hide" : "submit-edu-btn"}
+              >
+                Submit
+              </button>
             </form>
           </div>
         </div>
