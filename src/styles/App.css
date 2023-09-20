@@ -136,14 +136,14 @@ textarea {
   margin-bottom: 25px;
 }
 
-.info {
+.contacts {
   padding-left: 50px;
   padding-top: 50px;
   padding-right: 30px;
   font-weight: bold;
 }
 
-.info div {
+.contacts div {
   margin-bottom: 10px;
   display: flex;
 }
