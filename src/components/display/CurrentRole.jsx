@@ -1,8 +1,8 @@
-function CurrentRole() {
+function CurrentRole({ currentRole }) {
   return (
     <>
       <div className="info-current-role">
-        <div>Full Stack Developer</div>
+        <div>{currentRole}</div>
       </div>
     </>
   );

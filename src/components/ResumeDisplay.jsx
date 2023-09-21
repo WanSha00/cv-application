@@ -6,19 +6,33 @@ import Skills from "./display/Skills";
 import WorkExperience from "./display/WorkExperience";
 import Education from "./display/Education";
 
-function ResumeDisplay({ skillList }) {
+function ResumeDisplay({
+  fullName,
+  currentRole,
+  summary,
+  address,
+  email,
+  website,
+  phoneNo,
+  skillList,
+}) {
   return (
     <>
       <div className="resume-container">
         <div className="header">
-          <FullName />
-          <CurrentRole />
+          <FullName fullName={fullName} />
+          <CurrentRole currentRole={currentRole} />
         </div>
 
         <div className="info-container">
           <div className="main-left">
-            <ProfileSummary />
-            <Contacts />
+            <ProfileSummary summary={summary} />
+            <Contacts
+              address={address}
+              email={email}
+              website={website}
+              phoneNo={phoneNo}
+            />
             <div className="info-line"></div>
             <Skills skillList={skillList} />
           </div>
