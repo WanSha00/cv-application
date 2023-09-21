@@ -3,7 +3,13 @@ import deleteItem from "/src/assets/delete.svg";
 import addItem from "/src/assets/plus.svg";
 import openMenu from "/src/assets/menu-down.svg";
 
-function SkillInput({ skillList, setSkillList, handleSkillRemove, id, val }) {
+function SkillInput({ skillList, setSkillList, id, val }) {
+  const handleSkillRemove = (index) => {
+    const list = [...skillList];
+    list.splice(index, 1);
+    setSkillList(list);
+  };
+
   const handleSkillChange = (e, index) => {
     const { name, value } = e.target;
     const list = [...skillList];
@@ -44,12 +50,6 @@ function SkillsForm({ skillList, setSkillList }) {
     setSkillList([...skillList, { skill: "" }]);
   };
 
-  const handleSkillRemove = (index) => {
-    const list = [...skillList];
-    list.splice(index, 1);
-    setSkillList(list);
-  };
-
   return (
     <>
       <div className="skills-form">
@@ -69,7 +69,6 @@ function SkillsForm({ skillList, setSkillList }) {
                 key={index}
                 skillList={skillList}
                 setSkillList={setSkillList}
-                handleSkillRemove={handleSkillRemove}
                 id={index}
                 val={singleSkill}
               />
