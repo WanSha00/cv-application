@@ -3,7 +3,9 @@ import deleteItem from "/src/assets/delete.svg";
 import addItem from "/src/assets/plus.svg";
 import openMenu from "/src/assets/menu-down.svg";
 
-function SkillInput() {
+function SkillInput({ skillList }) {
+  const [newSkill, setNewSkill] = useState("");
+
   const deleteSkill = () => {
     console.log("Delete skill.");
   };
@@ -13,14 +15,21 @@ function SkillInput() {
       <div className="skill-label">
         <div>
           <label htmlFor="skill">Skill</label>
-          <input type="text" id="skill"></input>
+          <input
+            type="text"
+            id="skill"
+            value={newSkill}
+            onChange={(e) => setNewSkill(e.target.value)}
+          ></input>
         </div>
-        <img
-          className="del-skill-btn"
-          src={deleteItem}
-          alt="delete skill"
-          onClick={deleteSkill}
-        ></img>
+        {skillList.length > 1 && (
+          <img
+            className="del-skill-btn"
+            src={deleteItem}
+            alt="delete skill"
+            onClick={deleteSkill}
+          ></img>
+        )}
       </div>
     </>
   );
@@ -28,9 +37,10 @@ function SkillInput() {
 
 function SkillsForm() {
   const [hideSkills, setHideSkills] = useState(false);
+  const [skillList, setSkillList] = useState([{ skill: "" }]);
 
-  const addSkill = () => {
-    console.log("Add skill.");
+  const handleSkillAdd = () => {
+    setSkillList([...skillList, { skill: "" }]);
   };
 
   return (
@@ -47,13 +57,14 @@ function SkillsForm() {
             ></img>
           </div>
           <div className={hideSkills ? "hide" : ""}>
-            <SkillInput />
-            <SkillInput />
+            {skillList.map((singleSkill, index) => (
+              <SkillInput key={index} skillList={skillList} />
+            ))}
             <img
               className="add-skill-btn"
               src={addItem}
               alt="add skill"
-              onClick={addSkill}
+              onClick={handleSkillAdd}
             ></img>
           </div>
         </form>

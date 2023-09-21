@@ -1,4 +1,23 @@
+function SkillDetails({ skill }) {
+  return (
+    <>
+      <li>{skill}</li>
+    </>
+  );
+}
 function Skills() {
+  const skillDetails = [
+    {
+      skill: "JavaScript",
+    },
+    {
+      skill: "HTML",
+    },
+    {
+      skill: "CSS",
+    },
+  ];
+
   return (
     <>
       <div className="info-skills">
@@ -6,12 +25,14 @@ function Skills() {
 
         <div>
           <ul>
-            <li>JavaScript</li>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>React.js</li>
-            <li>Node.js</li>
-            <li>Rest APIs</li>
+            {skillDetails.map((skillDetail) => {
+              return (
+                <SkillDetails
+                  key={crypto.randomUUID()}
+                  skill={skillDetail.skill}
+                />
+              );
+            })}
           </ul>
         </div>
       </div>
