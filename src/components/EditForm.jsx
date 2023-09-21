@@ -3,12 +3,12 @@ import SkillsForm from "./edit/SkillsForm";
 import WorkForm from "./edit/WorkForm";
 import EducationForm from "./edit/EducationForm";
 
-function EditForm() {
+function EditForm({ skillList, setSkillList }) {
   return (
     <>
       <div className="edit-form-container">
         <PersonalForm />
-        <SkillsForm />
+        <SkillsForm skillList={skillList} setSkillList={setSkillList} />
         <WorkForm />
         <EducationForm />
       </div>

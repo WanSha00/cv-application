@@ -6,7 +6,7 @@ import Skills from "./display/Skills";
 import WorkExperience from "./display/WorkExperience";
 import Education from "./display/Education";
 
-function ResumeDisplay() {
+function ResumeDisplay({ skillList }) {
   return (
     <>
       <div className="resume-container">
@@ -20,7 +20,7 @@ function ResumeDisplay() {
             <ProfileSummary />
             <Contacts />
             <div className="info-line"></div>
-            <Skills />
+            <Skills skillList={skillList} />
           </div>
 
           <div className="main-right">

@@ -3,11 +3,12 @@ import deleteItem from "/src/assets/delete.svg";
 import addItem from "/src/assets/plus.svg";
 import openMenu from "/src/assets/menu-down.svg";
 
-function SkillInput({ skillList }) {
-  const [newSkill, setNewSkill] = useState("");
-
-  const deleteSkill = () => {
-    console.log("Delete skill.");
+function SkillInput({ skillList, setSkillList, handleSkillRemove, id, val }) {
+  const handleSkillChange = (e, index) => {
+    const { name, value } = e.target;
+    const list = [...skillList];
+    list[index][name] = value;
+    setSkillList(list);
   };
 
   return (
@@ -16,10 +17,11 @@ function SkillInput({ skillList }) {
         <div>
           <label htmlFor="skill">Skill</label>
           <input
+            name="skill"
             type="text"
             id="skill"
-            value={newSkill}
-            onChange={(e) => setNewSkill(e.target.value)}
+            value={val.skill}
+            onChange={(e) => handleSkillChange(e, id)}
           ></input>
         </div>
         {skillList.length > 1 && (
@@ -27,7 +29,7 @@ function SkillInput({ skillList }) {
             className="del-skill-btn"
             src={deleteItem}
             alt="delete skill"
-            onClick={deleteSkill}
+            onClick={() => handleSkillRemove(id)}
           ></img>
         )}
       </div>
@@ -35,12 +37,17 @@ function SkillInput({ skillList }) {
   );
 }
 
-function SkillsForm() {
+function SkillsForm({ skillList, setSkillList }) {
   const [hideSkills, setHideSkills] = useState(false);
-  const [skillList, setSkillList] = useState([{ skill: "" }]);
 
   const handleSkillAdd = () => {
     setSkillList([...skillList, { skill: "" }]);
+  };
+
+  const handleSkillRemove = (index) => {
+    const list = [...skillList];
+    list.splice(index, 1);
+    setSkillList(list);
   };
 
   return (
@@ -58,7 +65,14 @@ function SkillsForm() {
           </div>
           <div className={hideSkills ? "hide" : ""}>
             {skillList.map((singleSkill, index) => (
-              <SkillInput key={index} skillList={skillList} />
+              <SkillInput
+                key={index}
+                skillList={skillList}
+                setSkillList={setSkillList}
+                handleSkillRemove={handleSkillRemove}
+                id={index}
+                val={singleSkill}
+              />
             ))}
             <img
               className="add-skill-btn"

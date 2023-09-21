@@ -5,19 +5,7 @@ function SkillDetails({ skill }) {
     </>
   );
 }
-function Skills() {
-  const skillDetails = [
-    {
-      skill: "JavaScript",
-    },
-    {
-      skill: "HTML",
-    },
-    {
-      skill: "CSS",
-    },
-  ];
-
+function Skills({ skillList }) {
   return (
     <>
       <div className="info-skills">
@@ -25,7 +13,7 @@ function Skills() {
 
         <div>
           <ul>
-            {skillDetails.map((skillDetail) => {
+            {skillList.map((skillDetail) => {
               return (
                 <SkillDetails
                   key={crypto.randomUUID()}
