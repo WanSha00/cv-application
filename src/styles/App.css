@@ -213,8 +213,15 @@ textarea {
   top: 35px;
 }
 
+.del-edu-btn {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
 .add-skill-btn,
-.add-task-btn {
+.add-task-btn,
+.add-edu-btn {
   width: 30px;
   height: 30px;
   cursor: pointer;

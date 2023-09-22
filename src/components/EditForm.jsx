@@ -20,6 +20,8 @@ function EditForm({
   setPhoneNo,
   skillList,
   setSkillList,
+  eduList,
+  setEduList,
 }) {
   return (
     <>
@@ -42,7 +44,7 @@ function EditForm({
         />
         <SkillsForm skillList={skillList} setSkillList={setSkillList} />
         <WorkForm />
-        <EducationForm />
+        <EducationForm eduList={eduList} setEduList={setEduList} />
       </div>
     </>
   );

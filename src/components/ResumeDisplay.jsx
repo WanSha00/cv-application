@@ -15,6 +15,7 @@ function ResumeDisplay({
   website,
   phoneNo,
   skillList,
+  eduList,
 }) {
   return (
     <>
@@ -40,7 +41,7 @@ function ResumeDisplay({
           <div className="main-right">
             <WorkExperience />
             <div className="info-line2"></div>
-            <Education />
+            <Education eduList={eduList} />
           </div>
         </div>
       </div>

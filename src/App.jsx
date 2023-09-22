@@ -13,6 +13,13 @@ function App() {
   const [phoneNo, setPhoneNo] = useState("");
 
   const [skillList, setSkillList] = useState([{ skill: "" }]);
+  const [eduList, setEduList] = useState([
+    {
+      level: "",
+      duration: "",
+      institution: "",
+    },
+  ]);
 
   return (
     <>
@@ -34,6 +41,8 @@ function App() {
           setPhoneNo={setPhoneNo}
           skillList={skillList}
           setSkillList={setSkillList}
+          eduList={eduList}
+          setEduList={setEduList}
         />
         <ResumeDisplay
           fullName={fullName}
@@ -44,6 +53,7 @@ function App() {
           website={website}
           phoneNo={phoneNo}
           skillList={skillList}
+          eduList={eduList}
         />
       </div>
     </>
