@@ -77,9 +77,9 @@ function EducationForm({ eduList, setEduList }) {
     setEduList([
       ...eduList,
       {
-        level: "",
-        duration: "",
-        institution: "",
+        level: "Education level...",
+        duration: "duration...",
+        institution: "institution...",
       },
     ]);
   };

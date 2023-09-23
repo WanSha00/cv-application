@@ -4,20 +4,30 @@ import EditForm from "./components/EditForm";
 import ResumeDisplay from "./components/ResumeDisplay.jsx";
 
 function App() {
-  const [fullName, setFullName] = useState("");
-  const [currentRole, setCurrentRole] = useState("");
-  const [summary, setSummary] = useState("");
-  const [address, setAddress] = useState("");
-  const [email, setEmail] = useState("");
-  const [website, setWebsite] = useState("");
-  const [phoneNo, setPhoneNo] = useState("");
+  const [fullName, setFullName] = useState("Full Name");
+  const [currentRole, setCurrentRole] = useState("Current Role");
+  const [summary, setSummary] = useState("My profile summary...");
+  const [address, setAddress] = useState("Address...");
+  const [email, setEmail] = useState("email@google.com...");
+  const [website, setWebsite] = useState("www.website.com...");
+  const [phoneNo, setPhoneNo] = useState("+123 45 789");
 
-  const [skillList, setSkillList] = useState([{ skill: "" }]);
+  const [skillList, setSkillList] = useState([{ skill: "Skill 1" }]);
   const [eduList, setEduList] = useState([
     {
-      level: "",
-      duration: "",
-      institution: "",
+      level: "Education Level A",
+      duration: "Month 2000 - Month 2000",
+      institution: "Institution A",
+    },
+  ]);
+
+  const [taskList, setTaskList] = useState([{ tasks: ["Task 1", "Task 2"] }]);
+
+  const [workList, setWorkList] = useState([
+    {
+      role: "Role A",
+      duration: "Month 2000 - Present",
+      company: "Company A",
     },
   ]);
 
@@ -41,6 +51,10 @@ function App() {
           setPhoneNo={setPhoneNo}
           skillList={skillList}
           setSkillList={setSkillList}
+          workList={workList}
+          setWorkList={setWorkList}
+          taskList={taskList}
+          setTaskList={setTaskList}
           eduList={eduList}
           setEduList={setEduList}
         />
@@ -53,6 +67,8 @@ function App() {
           website={website}
           phoneNo={phoneNo}
           skillList={skillList}
+          workList={workList}
+          taskList={taskList}
           eduList={eduList}
         />
       </div>

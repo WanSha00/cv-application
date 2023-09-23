@@ -204,8 +204,7 @@ textarea {
   margin-bottom: 5px;
 }
 
-.del-skill-btn,
-.del-task-btn {
+.del-skill-btn {
   width: 30px;
   height: 30px;
   cursor: pointer;
@@ -213,17 +212,43 @@ textarea {
   top: 35px;
 }
 
+.del-task-btn {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  position: relative;
+  top: 35px;
+}
+
+.del-work-btn,
 .del-edu-btn {
   width: 30px;
   height: 30px;
   cursor: pointer;
 }
 
+.del-work-btn {
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
 .add-skill-btn,
-.add-task-btn,
 .add-edu-btn {
   width: 30px;
   height: 30px;
+  cursor: pointer;
+}
+
+.add-work-btn {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.add-task-btn {
+  width: 20px;
+  height: 20px;
   cursor: pointer;
 }
 

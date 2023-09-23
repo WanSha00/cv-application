@@ -20,6 +20,10 @@ function EditForm({
   setPhoneNo,
   skillList,
   setSkillList,
+  workList,
+  setWorkList,
+  taskList,
+  setTaskList,
   eduList,
   setEduList,
 }) {
@@ -43,7 +47,12 @@ function EditForm({
           setPhoneNo={setPhoneNo}
         />
         <SkillsForm skillList={skillList} setSkillList={setSkillList} />
-        <WorkForm />
+        <WorkForm
+          workList={workList}
+          setWorkList={setWorkList}
+          taskList={taskList}
+          setTaskList={setTaskList}
+        />
         <EducationForm eduList={eduList} setEduList={setEduList} />
       </div>
     </>
